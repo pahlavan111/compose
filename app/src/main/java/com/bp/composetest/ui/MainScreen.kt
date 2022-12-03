@@ -75,8 +75,8 @@ fun Greeting(name: String) {
 }
 
 @Composable
-@Preview(showSystemUi = true)
-fun DefaultPreview() {
+@Preview(showSystemUi = true, showBackground = true)
+fun MainScreenPreview() {
     ComposeTestTheme {
         MainScreen()
     }
