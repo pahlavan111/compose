@@ -3,11 +3,11 @@ package com.bp.composetest
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.OutlinedTextField
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.bp.composetest.ui.ColorBox
+import com.bp.composetest.ui.ListScreen
+import com.bp.composetest.ui.OutlineTextFieldScreen
 import com.bp.composetest.ui.theme.ComposeTestTheme
 
 class MainActivity : ComponentActivity() {
@@ -16,17 +16,20 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeTestTheme {
 //                MainScreen()
-                ColorBox(Modifier.fillMaxSize())
+//                ColorBox(Modifier.fillMaxSize())
+                ListScreen()
             }
         }
     }
 }
 
 @Composable
-@Preview(showSystemUi = true, showBackground = true)
-fun DefaultPreviewMain() {
+@Preview(showSystemUi = true)
+fun DefaultPreview() {
     ComposeTestTheme {
 //        MainScreen()
-        ColorBox()
+//        ColorBox()
+//        ListScreen()
+        OutlineTextFieldScreen("name")
     }
 }
