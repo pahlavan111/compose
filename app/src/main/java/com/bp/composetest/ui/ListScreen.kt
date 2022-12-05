@@ -15,9 +15,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.bp.composetest.ui.theme.ComposeTestTheme
 
 val stringList = listOf(
@@ -45,6 +48,18 @@ fun ListScreen(
             .padding(16.dp)
     ) {
 
+        item {
+            Text(
+                text = "title",
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
+
         items(items = nameList) {
             MyItem(title = it)
         }
@@ -63,9 +78,7 @@ fun MyItem(
                 .show()
         }
         .padding(16.dp)
-
 ) {
-
     Text(modifier = modifier, text = title)
     MyDivider(thickness = 0.5.dp, startIndent = 16.dp)
 }
